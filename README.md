@@ -21,6 +21,6 @@ A dataset consisting of 4.3 million entries of Twitter, Blogs, Paper, and CVEs r
 **Twitter:** 1. Dataset: (infosec OR security OR threat OR vulnerability OR cyber OR cybersec OR infrasec OR netsec OR hacking OR siem OR soc OR offsec OR osing OR bugbounty) | 2. Dataset: Data breaches, as, for example, the Microsoft Exchange Server Data Breach
 
 ---
-The dataset contains only the references to the data due to data storage/publication restrictions. All data instances can be crawled via tools like [Tweepy](https://github.com/tweepy/tweepy) or [Trafilatura](https://github.com/adbar/trafilatura).
+The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be crawled via tools like [Tweepy](https://github.com/tweepy/tweepy) or [Trafilatura](https://github.com/adbar/trafilatura).
 
 
