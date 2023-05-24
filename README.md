@@ -23,4 +23,10 @@ A dataset consisting of 4.3 million entries of Twitter, Blogs, Paper, and CVEs r
 ---
 The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be crawled via tools like [Tweepy](https://github.com/tweepy/tweepy) or [Trafilatura](https://github.com/adbar/trafilatura).
 
+Citation
+---
+When you use the dataset in your research, please cite: 
 
+Bayer, M., Kuehn, P.D., Shanehsaz, R., & Reuter, C.A. (2022). CySecBERT: A Domain-Adapted Language Model for the Cybersecurity Domain. ArXiv, abs/2212.02974. 
+
+https://arxiv.org/abs/2212.02974
