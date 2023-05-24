@@ -12,7 +12,7 @@ A dataset consisting of 4.3 million entries of Twitter, Blogs, Paper, and CVEs r
 
 **Table:** Statistics of the number of tokens and entries of the dataset.
 
-**Blogs:** 38 different blogs, like troyhunt.com, darkreading.com, schneier.com, and krebsonsecurity.com | Filtered duplicates, non-english texts and instances shorter than 300 characters)
+**Blogs:** 38 different blogs, like troyhunt.com, darkreading.com, schneier.com, and krebsonsecurity.com | Filtered duplicates, non-english texts and instances shorter than 300 characters
 
 **arXiv:** Papers from the category Cryptography and Security | Extraction: [opendetex](https://github.com/pkubowicz/opendetex) for papers in tex format and [textract](https://textract.readthedocs.io/en/stable/) for papers in pdf format | Filtered paper with lower length than 3000 characters
 
