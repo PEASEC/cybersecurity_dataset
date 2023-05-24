@@ -30,3 +30,7 @@ When you use the dataset in your research, please cite:
 Bayer, M., Kuehn, P.D., Shanehsaz, R., & Reuter, C.A. (2022). CySecBERT: A Domain-Adapted Language Model for the Cybersecurity Domain. ArXiv, abs/2212.02974. 
 
 https://arxiv.org/abs/2212.02974
+
+Language Model
+---
+This is the dataset constitutes the training dataset of the [CySecBERT](https://huggingface.co/markusbayer/CySecBERT) model.
