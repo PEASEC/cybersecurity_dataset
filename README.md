@@ -20,8 +20,11 @@ A dataset consisting of 4.3 million entries of Twitter, Blogs, Paper, and CVEs r
 
 **Twitter:** 1. Dataset: (infosec OR security OR threat OR vulnerability OR cyber OR cybersec OR infrasec OR netsec OR hacking OR siem OR soc OR offsec OR osing OR bugbounty) | 2. Dataset: Data breaches, as, for example, the Microsoft Exchange Server Data Breach
 
+Usage
 ---
-The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be crawled via tools like [Tweepy](https://github.com/tweepy/tweepy) or [Trafilatura](https://github.com/adbar/trafilatura).
+The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be gathered via the scripts in this repository or external tools.
+
+Twitter Crawling: twitter_crawling.py -- For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it
 
 Citation
 ---
