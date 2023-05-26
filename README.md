@@ -24,7 +24,9 @@ Usage
 ---
 The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be gathered via the scripts in this repository or external tools.
 
-Twitter Crawling: twitter_crawling.py -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it
+Twitter Crawling: twitter_crawling.py -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) `pip install tweepy` | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it.
+
+NVD Crawling: nvd_crawling.py -- Requirements: Installing requests `pip install requests`
 
 Citation
 ---
