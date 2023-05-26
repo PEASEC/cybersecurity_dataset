@@ -28,7 +28,7 @@ Twitter Crawling: `twitter_crawling.py` -- Requirements: Installing [Tweepy](htt
 
 NVD Crawling: `nvd_crawling.py` -- Requirements: Installing requests `pip install requests`
 
-ArXiv Crawling: `arxiv_crawling.py` -- Requirements: Installing requests, PyPDF2, beautifulsoup4 `pipenv install requests beautifulsoup4 PyPDF2`
+ArXiv Crawling: `arxiv_crawling.py` -- Requirements: Installing requests, PyPDF2, beautifulsoup4 `pip install requests beautifulsoup4 PyPDF2`
 
 Citation
 ---

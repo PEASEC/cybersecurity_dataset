@@ -1,20 +1,23 @@
-import requests
-from bs4 import BeautifulSoup
 import subprocess
 import os
-import PyPDF2
 import tarfile
 import tempfile
 import shutil
 import concurrent.futures
 
+from bs4 import BeautifulSoup
+import PyPDF2
+import requests
+
+
 def extract_text_from_pdf(file_path):
-    with open(file_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
+    with open(file_path, 'rb') as pdffile:
+        reader = PyPDF2.PdfReader(pdffile)
         text = ""
         for page in reader.pages:
             text += page.extract_text()
     return text
+
 
 def extract_text_from_gz(file_path):
     # Extract the .tex files from the gzipped archive
@@ -42,6 +45,7 @@ def extract_text_from_gz(file_path):
 
     return text
 
+
 def extract_text_from_tex(tex_files):
     # Determine the order of priority for tex files
     priority_files = ['ms.tex', 'main.tex']
@@ -60,6 +64,8 @@ def extract_text_from_tex(tex_files):
 
     return text
 
+
+
 def extract_text_from_tar(file_name):
     # Use tar and opendetex to extract the text from the .tar file
     process1 = subprocess.Popen(['tar', 'xf', file_name, '--to-stdout'], stdout=subprocess.PIPE)
@@ -69,6 +75,8 @@ def extract_text_from_tar(file_name):
     output, _ = process2.communicate()
 
     return output.decode('utf-8')
+
+
 
 def get_file_type(file_name):
     try:
@@ -86,6 +94,7 @@ def get_file_type(file_name):
     except subprocess.SubprocessError:
         return None
 
+
 def download_file(url):
     paper_id = url.split('/')[-1].split('v')[0]
     source_url = f"https://arxiv.org/e-print/{paper_id}"
@@ -95,6 +104,7 @@ def download_file(url):
     with open(file_name, 'wb') as file:
         file.write(response.content)
     return file_name
+
 
 def cleanup_temp_files(file_name):
     os.remove(file_name)
@@ -125,7 +135,7 @@ def process_arxiv_paper(url):
         text = clean_text(text)
 
         # Extract paper title and abstract from arXiv webpage
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
         paper_title = soup.find('h1', class_='title').text.strip()
         paper_abstract = soup.find('blockquote', class_='abstract mathjax').text.strip()
@@ -140,18 +150,21 @@ def process_arxiv_paper(url):
         print(str(e))
         return None
 
-def clean_text(text: str) -> str:
+
+def clean_text(text):
     text.replace('\n', '')
     text = ' '.join([line.strip() for line in text.splitlines() if line.strip()])
     return text
 
 
 def process_single_arxiv_paper(url):
-    result = process_arxiv_paper(url)
-    if result:
-        title, abstract, text = result
+    processed_paper = process_arxiv_paper(url)
+    if processed_paper:
+        title, abstract, text = processed_paper
         output_dict = {'title': title, 'abstract': abstract, 'text': text}
         return output_dict
+    return {'title': '', 'abstract': '', 'text': ''}
+
 
 # Read the URLs from the file
 with open("sources/urls_arxiv.txt", "r") as file:
@@ -167,4 +180,3 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         result = future.result()
         if result:
             print(result)
-
