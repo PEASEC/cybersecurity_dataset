@@ -24,9 +24,11 @@ Usage
 ---
 The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be gathered via the scripts in this repository or external tools.
 
-Twitter Crawling: twitter_crawling.py -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) `pip install tweepy` | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it.
+Twitter Crawling: `twitter_crawling.py` -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) `pip install tweepy` | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it.
 
-NVD Crawling: nvd_crawling.py -- Requirements: Installing requests `pip install requests`
+NVD Crawling: `nvd_crawling.py` -- Requirements: Installing requests `pip install requests`
+
+ArXiv Crawling: `arxiv_crawling.py` -- Requirements: Installing requests, PyPDF2, beautifulsoup4 `pipenv install requests beautifulsoup4 PyPDF2`
 
 Citation
 ---
@@ -36,6 +38,22 @@ Bayer, M., Kuehn, P., Shanehsaz, R., & Reuter, C. (2022). CySecBERT: A Domain-Ad
 
 https://arxiv.org/abs/2212.02974
 
+```
+@misc{bayer2022cysecbert,
+      title={CySecBERT: A Domain-Adapted Language Model for the Cybersecurity Domain}, 
+      author={Markus Bayer and Philipp Kuehn and Ramin Shanehsaz and Christian Reuter},
+      year={2022},
+      eprint={2212.02974},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}
+```
+
 Language Model
 ---
 This is the dataset constitutes the training dataset of the [CySecBERT](https://huggingface.co/markusbayer/CySecBERT) model.
+
+Acknowledgements
+---
+This research work has been funded by the German Federal Ministry of Education and Research and the Hessian Ministry of Higher Education, Research, Science and the Arts within their joint support of the National Research Center for Applied Cybersecurity ATHENE and by the German Federal Ministry for Education and Research~(BMBF) in the project CYWARN~(13N15407).
+The calculations for this research were conducted on the Lichtenberg high performance computer of the TU Darmstadt.

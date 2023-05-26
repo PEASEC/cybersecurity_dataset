@@ -34,19 +34,19 @@ def get_tweets(tweet_ids):
     return tweets
 
 # Read tweet IDs from file
-with open('ids_twitter_data_breaches.txt', 'r') as f:
+with open('sources/ids_twitter_data_breaches.txt', 'r') as f:
     tweet_ids = f.read().splitlines()
-with open('ids_twitter_infosec_1.txt', 'r') as f:
+with open('sources/ids_twitter_infosec_1.txt', 'r') as f:
     tweet_ids += f.read().splitlines()
-with open('ids_twitter_infosec_2.txt', 'r') as f:
+with open('sources/ids_twitter_infosec_2.txt', 'r') as f:
     tweet_ids += f.read().splitlines()
-with open('ids_twitter_infosec_3.txt', 'r') as f:
+with open('sources/ids_twitter_infosec_3.txt', 'r') as f:
     tweet_ids += f.read().splitlines()
 
 # Get tweets based on the IDs
 tweets = get_tweets(tweet_ids)
 
 # Save the tweets to a file
-with open('tweets.txt', 'w') as f:
+with open('sources/tweets.txt', 'w') as f:
     for tweet in tweets:
         f.write("%s\n" % tweet)

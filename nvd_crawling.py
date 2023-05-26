@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 
 # read CVE ids from the text file
-with open('ids_nvd.txt', 'r') as file:
+with open('sources/ids_nvd.txt', 'r') as file:
     cve_ids = [line.strip() for line in file]
 
 # initialize an empty list to store CVE ids and their descriptions
@@ -26,6 +26,6 @@ for cve_id in cve_ids:
         cve_data += description
 
 # Save the cves to a file
-with open('cves.txt', 'w') as f:
+with open('sources/cves.txt', 'w') as f:
     for cve in cve_data:
         f.write("%s\n" % cve)
