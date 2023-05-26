@@ -12,9 +12,9 @@ A dataset consisting of 4.3 million entries of Twitter, Blogs, Paper, and CVEs r
 
 **Table:** Statistics of the number of tokens and entries of the dataset.
 
-**Blogs:** 38 different blogs, like troyhunt.com, darkreading.com, schneier.com, and krebsonsecurity.com | Filtered duplicates, non-english texts and instances shorter than 300 characters
+**Blogs:** 38 different blogs, like troyhunt.com, darkreading.com, schneier.com, and krebsonsecurity.com | Filtered duplicates, non-english texts and instances shorter than 300 characters | Extraction: [trafilatura](https://trafilatura.readthedocs.io/en/latest/index.html)
 
-**arXiv:** Papers from the category Cryptography and Security | Extraction: [opendetex](https://github.com/pkubowicz/opendetex) for papers in tex format and [textract](https://textract.readthedocs.io/en/stable/) for papers in pdf format | Filtered paper with lower length than 3000 characters
+**arXiv:** Papers from the category Cryptography and Security | Extraction: [opendetex](https://github.com/pkubowicz/opendetex) for papers in tex format and [PyPDF2](https://pypi.org/project/PyPDF2/) for papers in pdf format | Filtered paper with lower length than 3000 characters
 
 **CVEs:** NVD entries till 2022-03-15 21:38:23 | No filtering
 
@@ -24,11 +24,13 @@ Usage
 ---
 The dataset contains only the references to the data due to data storage/publication restrictions. The data instances can be gathered via the scripts in this repository or external tools.
 
-Twitter Crawling: `twitter_crawling.py` -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) `pip install tweepy` | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it.
+Blog Crawling: `blog_crawling.py` -- Requirements: Installing requests `pip install trafilatura`
+
+ArXiv Crawling: `arxiv_crawling.py` -- Requirements: Installing requests, PyPDF2, beautifulsoup4 `pip install requests beautifulsoup4 PyPDF2`
 
 NVD Crawling: `nvd_crawling.py` -- Requirements: Installing requests `pip install requests`
 
-ArXiv Crawling: `arxiv_crawling.py` -- Requirements: Installing requests, PyPDF2, beautifulsoup4 `pip install requests beautifulsoup4 PyPDF2`
+Twitter Crawling: `twitter_crawling.py` -- Requirements: Installing [Tweepy](https://github.com/tweepy/tweepy) `pip install tweepy` | For gathering the Tweets you need to insert your API-Key, API-Secret-Key, Access-Token and Access-Token-Secret of the Twitter-API into the script before you run it.
 
 Citation
 ---
